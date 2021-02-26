@@ -1,8 +1,9 @@
 import { Profiler } from 'inspector'
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '../styles/components/Profile.module.css'
-
+import { ChallengeContexts } from "../contexts/ChallengesContext";
 export function Profile (){
+    const {level} = useContext(ChallengeContexts)
     return (
 
         <div className={styles.profileContainer}>
@@ -10,7 +11,7 @@ export function Profile (){
             <div>
                 <strong>Jean Pereira</strong>
                 <p><img src="icons/level.svg" alt="level"/>
-                    Level 1</p>
+                    Level {level}</p>
             </div>
         </div>
     )
